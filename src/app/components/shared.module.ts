@@ -8,25 +8,13 @@ import {ClientComponent} from './client/client.component';
 import {SwitcherComponent} from './switcher/switcher.component';
 import {ScrollspyDirective} from './scrollspy.directive';
 import {FooterComponent} from './footer/footer.component';
-import {FaqComponent} from './faq/faq.component';
-import {FeaturesComponent} from './features/features.component';
-import {PricingComponent} from './pricing/pricing.component';
-import {ServicesComponent} from './services/services.component';
-import {CtaComponent} from './cta/cta.component';
-import {TeamComponent} from './team/team.component';
 
 @NgModule({
   declarations: [
     ClientComponent,
     SwitcherComponent,
     ScrollspyDirective,
-    FooterComponent,
-    FaqComponent,
-    FeaturesComponent,
-    PricingComponent,
-    ServicesComponent,
-    CtaComponent,
-    TeamComponent
+    FooterComponent
   ],
   imports: [
     CommonModule,
@@ -37,13 +25,7 @@ import {TeamComponent} from './team/team.component';
     ClientComponent,
     SwitcherComponent,
     ScrollspyDirective,
-    FooterComponent,
-    FaqComponent,
-    FeaturesComponent,
-    PricingComponent,
-    ServicesComponent,
-    CtaComponent,
-    TeamComponent
+    FooterComponent
   ]
 })
 export class SharedModule {
