@@ -13,21 +13,24 @@ export class PricingComponent implements OnInit {
       bandwidth : '1GB',
       space : '50MB',
       support : 'No',
-      domain : 1
+      domain : 1,
+      isActive : true
     },
     {
       price : '$59',
       bandwidth : '2GB',
       space : '500MB',
       support : 'Yes',
-      domain : 5
+      domain : 5,
+      isActive : false
     },
     {
       price : '$79',
       bandwidth : '1GB',
       space : '1GB',
       support : 'No',
-      domain : 10
+      domain : 10,
+      isActive : false
     },
   ]
 
