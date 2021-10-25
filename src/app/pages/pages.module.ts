@@ -14,7 +14,6 @@ import {LoginComponent} from './login/login.component';
 import {PasswordForgetComponent} from './password-forget/password-forget.component';
 import {SignupComponent} from './signup/signup.component';
 import {ErrorPageComponent} from './error-page/error-page.component';
-import {AppModule} from "../app.module";
 
 @NgModule({
   declarations: [HomePageComponent, LoginComponent, PasswordForgetComponent, SignupComponent, ErrorPageComponent],
@@ -25,8 +24,7 @@ import {AppModule} from "../app.module";
     ScrollToModule.forRoot(),
     NgxTypedJsModule,
     NgParticlesModule,
-    CarouselModule,
-    AppModule
+    CarouselModule
   ]
 })
 export class PagesModule {
