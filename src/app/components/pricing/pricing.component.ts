@@ -26,9 +26,9 @@ export class PricingComponent implements OnInit {
     },
     {
       price : '$79',
-      bandwidth : '1GB',
+      bandwidth : '4GB',
       space : '1GB',
-      support : 'No',
+      support : 'Yes',
       domain : 10,
       isActive : false
     },
@@ -37,6 +37,17 @@ export class PricingComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  /**
+   * returns 'active' if isActive is true in pricingData[]
+   * @param index
+   */
+  public getClass(index : number) : string {
+    if (true === this.pricingData[index]['isActive']) {
+      return 'active';
+    }
+    return '';
   }
 
 }
