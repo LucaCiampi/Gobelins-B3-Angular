@@ -19,6 +19,9 @@ import { ContactComponent } from './components/contact/contact.component';
     BrowserAnimationsModule
   ],
   providers: [],
+  exports: [
+    ContactComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
