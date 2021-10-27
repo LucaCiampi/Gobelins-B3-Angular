@@ -20,7 +20,7 @@
             <p class="fw-bold mb-0 mt-4">{{team.name}}</p>
             <p class="text-muted mt-4">{{team.text}}</p>
           </div>
-          <app-external-links [links]="team.links"></app-external-links>
+          <app-external-links *ngIf="toggleSocialLinks" [links]="team.links"></app-external-links>
         </div>
       </div>
 

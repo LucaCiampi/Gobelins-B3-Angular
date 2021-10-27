@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Inject, OnDestroy, OnInit} from '@angular/core';
+import {AfterViewInit, ChangeDetectorRef, Component, Inject, Input, OnDestroy, OnInit} from '@angular/core';
 import {DOCUMENT} from "@angular/common";
 
 @Component({
@@ -18,9 +18,11 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
     'Create amazing landing page with Gobelins',
     'Perfect solution for small businesses',
     'We love make things amazing and simple'
-  ]
+  ];
+  toggleSocialLinks: boolean = true;
 
-  constructor(@Inject(DOCUMENT) private readonly document: Document) {
+  constructor(@Inject(DOCUMENT) private readonly document: Document,
+              private readonly changeDetectorRef: ChangeDetectorRef) {
     // exécuté en premier !
 
     // exemple de log à checker dans la console du navigateur
@@ -90,10 +92,11 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
 
   /**
    * Emits an eventEmitter on cta button click
-   * @param value
+   * @param event: boolean
    */
-  public onEmitToggleSocialLinksEvent(value: boolean): void {
-    console.log(value);
+  public onEmitToggleSocialLinksEvent(event: boolean): void {
+    this.toggleSocialLinks = event;
+    this.changeDetectorRef.detectChanges();
   }
 
   ngOnDestroy() {

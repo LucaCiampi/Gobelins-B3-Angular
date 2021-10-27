@@ -15,6 +15,10 @@ export class CtaComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Toggled on cta component button click
+   * @param value: boolean
+   */
   onEmitToggleSocialLinksEvent(value: boolean) {
     this.toggleSocialLinksEvent.emit(value);
   }
