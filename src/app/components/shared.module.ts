@@ -15,6 +15,7 @@ import { CtaComponent } from './cta/cta.component';
 import { FeaturesComponent } from './features/features.component';
 import {PricingComponent} from "./pricing/pricing.component";
 import {ContactComponent} from "./contact/contact.component";
+import { ExternalLinksComponent } from './team/external-links/external-links.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {ContactComponent} from "./contact/contact.component";
     CtaComponent,
     FeaturesComponent,
     PricingComponent,
-    ContactComponent
+    ContactComponent,
+    ExternalLinksComponent
   ],
   imports: [
     CommonModule,
@@ -46,7 +48,8 @@ import {ContactComponent} from "./contact/contact.component";
     CtaComponent,
     FeaturesComponent,
     PricingComponent,
-    ContactComponent
+    ContactComponent,
+    ExternalLinksComponent
   ]
 })
 export class SharedModule {
