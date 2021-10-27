@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-cta',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CtaComponent implements OnInit {
 
-  constructor() { }
+  @Output() toggleSocialLinksEvent = new EventEmitter<boolean>();
+
+  constructor() {
+  }
 
   ngOnInit(): void {
+  }
+
+  onEmitToggleSocialLinksEvent(value: boolean) {
+    this.toggleSocialLinksEvent.emit(value);
   }
 
 }

@@ -88,6 +88,14 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
     this.currentSection = sectionId;
   }
 
+  /**
+   * Emits an eventEmitter on cta button click
+   * @param value
+   */
+  public onEmitToggleSocialLinksEvent(value: boolean): void {
+    console.log(value);
+  }
+
   ngOnDestroy() {
     // exécuté automatiquement avant la desctruction du composant
     // obligatoire si implements OnDestroy (qui est facultatif)
