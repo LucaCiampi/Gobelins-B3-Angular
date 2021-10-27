@@ -20,6 +20,7 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
     'We love make things amazing and simple'
   ];
   toggleSocialLinks: boolean = true;
+  toggleFeaturesTitle: number = 0;
 
   constructor(@Inject(DOCUMENT) private readonly document: Document,
               private readonly changeDetectorRef: ChangeDetectorRef) {
@@ -96,6 +97,15 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
    */
   public onEmitToggleSocialLinksEvent(event: boolean): void {
     this.toggleSocialLinks = event;
+    this.changeDetectorRef.detectChanges();
+  }
+
+  /**
+   * Emits an eventEmitter on services button click
+   * @param event: boolean
+   */
+  public onEmitToggleFeaturesTitle(event: number): void {
+    this.toggleFeaturesTitle = event;
     this.changeDetectorRef.detectChanges();
   }
 

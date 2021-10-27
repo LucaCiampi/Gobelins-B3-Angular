@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectorRef, Component, Input, OnInit, SimpleChanges} from '@angular/core';
 
 @Component({
   selector: 'app-features',
@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeaturesComponent implements OnInit {
 
+  @Input() toggleFeaturesTitle: number;
+  featuresTitles = ['Our features', 'Roule ma poule'];
   featuresData = [
     {
       image : 'mockup2.png',
@@ -22,9 +24,21 @@ export class FeaturesComponent implements OnInit {
     }
   ]
 
-  constructor() { }
+  constructor(private readonly changeDetectorRef: ChangeDetectorRef) { }
 
   ngOnInit(): void {
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('featuresComponent ngOnChanges');
+    this.changeDetectorRef.detectChanges();
+    this.changeTitle(this.toggleFeaturesTitle);
+  }
+
+  changeTitle(index: number): void {
+    const title = document.getElementById('featuresTitle');
+    if (!title) return;
+    title.innerHTML = this.featuresTitles[index];
   }
 
 }

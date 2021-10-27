@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-services',
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.css']
 })
+
 export class ServicesComponent implements OnInit {
 
+  @Output() toggleFeaturesTitleEvent = new EventEmitter<number>();
   servicesData = [
     {
       icon : 'ti-settings',
@@ -51,4 +53,7 @@ export class ServicesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onEmitToggleFeaturesTitle() {
+    this.toggleFeaturesTitleEvent.emit(1);
+  }
 }

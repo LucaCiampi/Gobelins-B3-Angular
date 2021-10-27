@@ -78,11 +78,11 @@
   <!-- END HOME -->
 
   <!-- START SERVICES -->
-  <app-services></app-services>
+  <app-services (toggleFeaturesTitleEvent)="onEmitToggleFeaturesTitle($event)"></app-services>
   <!-- END SERVICES -->
 
   <!-- START FEATURES -->
-  <app-features></app-features>
+  <app-features [toggleFeaturesTitle]="toggleFeaturesTitle"></app-features>
   <!-- END FEATURES -->
 
   <!-- note : client est un selector, il permet de charger le component ainsi que son html & css -->

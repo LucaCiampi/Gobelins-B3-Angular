@@ -8,6 +8,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 export class CtaComponent implements OnInit {
 
   @Output() toggleSocialLinksEvent = new EventEmitter<boolean>();
+  toggleSocialLinks = true;
 
   constructor() {
   }
@@ -17,10 +18,10 @@ export class CtaComponent implements OnInit {
 
   /**
    * Toggled on cta component button click
-   * @param value: boolean
    */
-  onEmitToggleSocialLinksEvent(value: boolean) {
-    this.toggleSocialLinksEvent.emit(value);
+  onEmitToggleSocialLinksEvent() {
+    this.toggleSocialLinks = !this.toggleSocialLinks;
+    this.toggleSocialLinksEvent.emit(this.toggleSocialLinks);
   }
 
 }
