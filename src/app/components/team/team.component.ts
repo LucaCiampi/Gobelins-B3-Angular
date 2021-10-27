@@ -7,6 +7,7 @@ import {TeamMemberLinksModel} from "../../models/team-member-links.model";
   templateUrl: './team.component.html',
   styleUrls: ['./team.component.css']
 })
+
 export class TeamComponent implements OnInit {
 
   teamMemberList: TeamMemberModel[];
@@ -42,7 +43,7 @@ export class TeamComponent implements OnInit {
         links: new TeamMemberLinksModel({
           github: 'https://github.com/user/username',
           skype: 'https://github.com/user/username',
-          // twitter : 'https://github.com/user/username'
+          twitter : 'https://github.com/user/username'
         })
       })
     ];

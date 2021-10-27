@@ -16,6 +16,7 @@ import { FeaturesComponent } from './features/features.component';
 import {PricingComponent} from "./pricing/pricing.component";
 import {ContactComponent} from "./contact/contact.component";
 import { ExternalLinksComponent } from './team/external-links/external-links.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -32,11 +33,12 @@ import { ExternalLinksComponent } from './team/external-links/external-links.com
     ContactComponent,
     ExternalLinksComponent
   ],
-  imports: [
-    CommonModule,
-    CarouselModule,
-    ScrollToModule.forRoot()
-  ],
+    imports: [
+        CommonModule,
+        CarouselModule,
+        ScrollToModule.forRoot(),
+        FormsModule
+    ],
   exports: [
     ClientComponent,
     SwitcherComponent,
