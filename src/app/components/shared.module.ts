@@ -17,6 +17,7 @@ import {PricingComponent} from "./pricing/pricing.component";
 import {ContactComponent} from "./contact/contact.component";
 import { ExternalLinksComponent } from './team/external-links/external-links.component';
 import {FormsModule} from "@angular/forms";
+import {ExcerptPipe} from "../pipes/excerpt.pipe";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {FormsModule} from "@angular/forms";
     FeaturesComponent,
     PricingComponent,
     ContactComponent,
-    ExternalLinksComponent
+    ExternalLinksComponent,
+    ExcerptPipe
   ],
     imports: [
         CommonModule,
@@ -51,7 +53,8 @@ import {FormsModule} from "@angular/forms";
     FeaturesComponent,
     PricingComponent,
     ContactComponent,
-    ExternalLinksComponent
+    ExternalLinksComponent,
+    ExcerptPipe
   ]
 })
 export class SharedModule {
