@@ -1,6 +1,7 @@
 import {ChangeDetectorRef, Component, Input, OnInit, SimpleChanges} from '@angular/core';
 import {TeamMemberModel} from "../../models/team-member.model";
 import {TeamMemberLinksModel} from "../../models/team-member-links.model";
+import * as faker from "faker";
 
 @Component({
   selector: 'app-team',
@@ -14,10 +15,11 @@ export class TeamComponent implements OnInit {
   @Input() toggleSocialLinks: boolean;
 
   constructor(private readonly changeDetectorRef: ChangeDetectorRef) {
+
     this.teamMemberList = [
       new TeamMemberModel({
-        image: 'team-3.png',
-        name: '@Donald Laughlin',
+        image: faker.image.imageUrl(140, 140, undefined, true, true),
+        name: '@' + faker.name.firstName() + ' ' + faker.name.lastName(),
         text: 'You want customer to your store. Easily your coupans and has Clooger.',
         links: new TeamMemberLinksModel({
           // github : 'https://github.com/user/username',
@@ -26,8 +28,8 @@ export class TeamComponent implements OnInit {
         })
       }),
       new TeamMemberModel({
-        image: 'team-2.png',
-        name: '@Rigoberto Valenza',
+        image: faker.image.imageUrl(140, 140, undefined, true, true),
+        name: '@' + faker.name.firstName() + ' ' + faker.name.lastName(),
         text: 'You want customer to your store. Easily your coupans and has Clooger.',
         isActive: true,
         links: new TeamMemberLinksModel({
@@ -37,8 +39,8 @@ export class TeamComponent implements OnInit {
         })
       }),
       new TeamMemberModel({
-        image: 'team-1.png',
-        name: '@Venessa Smith',
+        image: faker.image.imageUrl(140, 140, undefined, true, true),
+        name: '@' + faker.name.firstName() + ' ' + faker.name.lastName(),
         text: 'You want customer to your store. Easily your coupans and has Clooger.',
         isActive: false,
         links: new TeamMemberLinksModel({
