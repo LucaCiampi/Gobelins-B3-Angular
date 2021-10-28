@@ -10,6 +10,7 @@ export class ContactComponent implements OnInit {
 
   contactForm: FormGroup;
   static readonly EMAIL = /^.+\@\S+\.\S+$/;
+  submitted: boolean = false;
 
   constructor() {
     this.contactForm = new FormGroup({
@@ -23,15 +24,20 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Function called on submission of contact form
+   * @return void
+   */
   submitForm(): void {
-    // this.contactForm;
-    //
-    // if (this.contactForm.invalid)
-    // {
-    //   return;
-    // }
-
     console.log(this.contactForm);
+
+    if (this.contactForm.invalid)
+    {
+      return;
+    }
+
+    this.submitted = true;
+    this.contactForm.reset();
   }
 
 }

@@ -24,7 +24,13 @@
       <div class="col-lg-8">
         <div class="custom-form mt-4 pt-4">
 
-          <form [formGroup]="contactForm" (ngSubmit)="submitForm()" method="post" name="myForm">
+          <div style="padding-top: 26px;" *ngIf="submitted" class="confirmationMessage">
+            <h5>Thank you :) your message has been sent</h5>
+            <button (click)="submitted = false;" type="submit" id="submitAnother" name="sendAnother" class="submitBnt btn btn-primary" style="margin-top: 20px;">Send another
+              message
+            </button>
+          </div>
+          <form *ngIf="!submitted" [formGroup]="contactForm" (ngSubmit)="submitForm()" method="post" name="myForm">
             <p id="error-msg"></p>
             <div></div>
             <div class="row">
@@ -32,13 +38,18 @@
                 <div class="form-group mt-2">
                   <input formControlName="name" name="name" id="name" type="text" class="form-control"
                          placeholder="Your name*">
+                  <div [hidden]="contactForm.controls.name.valid || contactForm.controls.name.pristine"
+                       class="error-message alert alert-danger">name is required
+                  </div>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="form-group mt-2">
                   <input formControlName="email" name="email" id="email" type="email" class="form-control"
                          placeholder="Your email*">
-                  <span class="error-message">Erreur dans l'adresse e-mail</span>
+                  <div [hidden]="contactForm.controls.email.valid || contactForm.controls.email.pristine"
+                       class="error-message alert alert-danger">e-mail is required
+                  </div>
                 </div>
               </div>
             </div>
@@ -47,14 +58,20 @@
                 <div class="form-group mt-2">
                   <input formControlName="subject" type="text" class="form-control" id="subject"
                          placeholder="Your Subject.."/>
+                  <div [hidden]="contactForm.controls.subject.valid || contactForm.controls.subject.pristine"
+                       class="error-message alert alert-danger">subject is required
+                  </div>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-lg-12">
                 <div class="form-group mt-2">
-                    <textarea formControlName="comments" name="comments" id="comments" rows="4" class="form-control"
-                              placeholder="Your message..."></textarea>
+                  <textarea formControlName="comments" name="comments" id="comments" rows="4" class="form-control"
+                            placeholder="Your message..."></textarea>
+                  <div [hidden]="contactForm.controls.comments.valid || contactForm.controls.comments.pristine"
+                       class="error-message alert alert-danger">message is required
+                  </div>
                 </div>
               </div>
             </div>
