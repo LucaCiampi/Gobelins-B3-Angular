@@ -16,7 +16,7 @@ import { FeaturesComponent } from './features/features.component';
 import {PricingComponent} from "./pricing/pricing.component";
 import {ContactComponent} from "./contact/contact.component";
 import { ExternalLinksComponent } from './team/external-links/external-links.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ExcerptPipe} from "../pipes/excerpt.pipe";
 
 @NgModule({
@@ -39,7 +39,8 @@ import {ExcerptPipe} from "../pipes/excerpt.pipe";
         CommonModule,
         CarouselModule,
         ScrollToModule.forRoot(),
-        FormsModule
+        FormsModule,
+        ReactiveFormsModule
     ],
   exports: [
     ClientComponent,

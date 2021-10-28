@@ -20,7 +20,7 @@ export class TeamComponent implements OnInit {
       new TeamMemberModel({
         image: faker.image.imageUrl(140, 140, undefined, true, true),
         name: '@' + faker.name.firstName() + ' ' + faker.name.lastName(),
-        text: 'You want customer to your store. Easily your coupans and has Clooger.',
+        text: faker.lorem.sentence(12),
         links: new TeamMemberLinksModel({
           // github : 'https://github.com/user/username',
           skype: 'https://github.com/user/username',
@@ -30,7 +30,7 @@ export class TeamComponent implements OnInit {
       new TeamMemberModel({
         image: faker.image.imageUrl(140, 140, undefined, true, true),
         name: '@' + faker.name.firstName() + ' ' + faker.name.lastName(),
-        text: 'You want customer to your store. Easily your coupans and has Clooger.',
+        text: faker.lorem.sentence(12),
         isActive: true,
         links: new TeamMemberLinksModel({
           github: 'https://github.com/user/username',
@@ -41,7 +41,7 @@ export class TeamComponent implements OnInit {
       new TeamMemberModel({
         image: faker.image.imageUrl(140, 140, undefined, true, true),
         name: '@' + faker.name.firstName() + ' ' + faker.name.lastName(),
-        text: 'You want customer to your store. Easily your coupans and has Clooger.',
+        text: faker.lorem.sentence(12),
         isActive: false,
         links: new TeamMemberLinksModel({
           github: 'https://github.com/user/username',
@@ -57,7 +57,9 @@ export class TeamComponent implements OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('teamComponent ngOnChanges');
+    console.log('teamComponent ngOnChanges' + changes);
+    // Permet d'afficher l'objet
+    console.log('teamComponent ngOnChanges', changes);
     this.changeDetectorRef.detectChanges();
   }
 
